@@ -21,9 +21,11 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           className="rounded-lg mb-6"
         />
       )}
-      <ReactMarkdown remarkPlugins={[remarkGfm]} className="prose">
-        {article.attributes.content}
-      </ReactMarkdown>
+      <div className="prose">  {/* Wrap here */}
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {article.attributes.content}
+        </ReactMarkdown>
+      </div>
     </div>
   );
 }
